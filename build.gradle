@@ -6,7 +6,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.2'
+        classpath 'com.android.tools.build:gradle:4.0.1'
     }
 }
 
@@ -18,12 +18,9 @@ allprojects {
 }
 
 ext {
-    compileSdkVersion = 29
-    targetSdkVersion = 27
+    compileSdkVersion = 30
+    targetSdkVersion = 30
     minSdkVersion = 14
-
-    axAnnotationVersion = "1.1.0"
-    axAppcompatVersion = "1.1.0"
 }
 
 task clean(type: Delete) {
