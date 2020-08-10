@@ -2,6 +2,8 @@ package com.topjohnwu.widget;
 
 import android.widget.Checkable;
 
+import androidx.annotation.Nullable;
+
 /**
  * Extension to Checkable interface with addition "indeterminate" state
  * represented by <code>getState()</code>. Value meanings:
@@ -11,6 +13,8 @@ import android.widget.Checkable;
  */
 public interface IndeterminateCheckable extends Checkable {
 
-    void setState(Boolean state);
+    void setState(@Nullable Boolean state);
+
+    @Nullable
     Boolean getState();
 }
