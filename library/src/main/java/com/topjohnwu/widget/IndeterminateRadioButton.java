@@ -1,4 +1,4 @@
-package com.buildware.widget.indeterm;
+package com.topjohnwu.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;

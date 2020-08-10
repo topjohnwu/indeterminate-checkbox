@@ -1,4 +1,4 @@
-package com.buildware.widget.indeterm;
+package com.topjohnwu.widget;
 
 import android.widget.Checkable;
 

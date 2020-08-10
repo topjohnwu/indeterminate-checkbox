@@ -75,14 +75,14 @@
             android:text="AppCompatCheckBox"
             android:id="@+id/app_compat_checkbox"/>
 
-        <com.buildware.widget.indeterm.IndeterminateCheckBox
+        <com.topjohnwu.widget.IndeterminateCheckBox
             android:id="@+id/indeterm_checkbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="IndeterminateCheckBox"
             app:indeterminate="true"/>
 
-        <com.buildware.widget.indeterm.IndeterminateRadioButton
+        <com.topjohnwu.widget.IndeterminateRadioButton
             android:id="@+id/indeterm_radio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

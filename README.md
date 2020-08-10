@@ -44,7 +44,7 @@ Android CheckBox and RadioButton with additional 3rd 'indeterminate' state.
 ##### In XML layout
 Add this to your layout:
 ```XML
-<com.buildware.widget.indeterm.IndeterminateCheckBox
+<com.topjohnwu.widget.IndeterminateCheckBox
     android:id="@+id/indeterm_checkbox"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

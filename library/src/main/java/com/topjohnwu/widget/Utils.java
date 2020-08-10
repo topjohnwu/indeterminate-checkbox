@@ -1,4 +1,4 @@
-package com.buildware.widget.indeterm;
+package com.topjohnwu.widget;
 
 import android.content.res.ColorStateList;
 import android.util.StateSet;

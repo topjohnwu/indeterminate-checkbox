@@ -1,16 +1,17 @@
 package com.buildware.widget.sample;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.appcompat.widget.AppCompatCheckBox;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
-import com.buildware.widget.indeterm.IndeterminateCheckBox;
-import com.buildware.widget.indeterm.IndeterminateRadioButton;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatCheckBox;
+
+import com.topjohnwu.widget.IndeterminateCheckBox;
+import com.topjohnwu.widget.IndeterminateRadioButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
-        final AppCompatCheckBox appCompatCheckBox = (AppCompatCheckBox) findViewById(R.id.app_compat_checkbox);
-        final IndeterminateCheckBox indetermCheckBox = (IndeterminateCheckBox) findViewById(R.id.indeterm_checkbox);
-        final IndeterminateRadioButton radio = (IndeterminateRadioButton) findViewById(R.id.indeterm_radio);
+        final CheckBox checkBox = findViewById(R.id.checkBox);
+        final AppCompatCheckBox appCompatCheckBox = findViewById(R.id.app_compat_checkbox);
+        final IndeterminateCheckBox indetermCheckBox = findViewById(R.id.indeterm_checkbox);
+        final IndeterminateRadioButton radio = findViewById(R.id.indeterm_radio);
 
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
