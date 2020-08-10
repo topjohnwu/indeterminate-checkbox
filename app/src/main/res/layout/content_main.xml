@@ -66,7 +66,7 @@
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Standard CheckBox"
+            android:text="Default CheckBox"
             android:id="@+id/checkBox"/>
 
         <androidx.appcompat.widget.AppCompatCheckBox

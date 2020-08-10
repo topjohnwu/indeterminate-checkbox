@@ -3,17 +3,19 @@ package com.buildware.widget.indeterm;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Parcelable;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatRadioButton;
 import android.util.AttributeSet;
 import android.view.ViewDebug;
+
+import androidx.annotation.Nullable;
+
+import com.google.android.material.radiobutton.MaterialRadioButton;
 
 /**
  * A RadioButton with additional 3rd "indeterminate" state.
  * By default it is in "determinate" (checked or unchecked) state.
  * @author Svetlozar Kostadinov (sevarbg@gmail.com)
  */
-public class IndeterminateRadioButton extends AppCompatRadioButton
+public class IndeterminateRadioButton extends MaterialRadioButton
         implements IndeterminateCheckable {
 
     private static final int[] INDETERMINATE_STATE_SET = {
@@ -51,8 +53,7 @@ public class IndeterminateRadioButton extends AppCompatRadioButton
     public IndeterminateRadioButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        //setSupportButtonTintList(ContextCompat.getColorStateList(context, R.color.control_checkable_material));
-        setButtonDrawable(Utils.tintDrawable(this, R.drawable.btn_radio));
+        Utils.setButtonDrawable(this, R.drawable.btn_radio);
 
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.IndeterminateCheckable);
         try {

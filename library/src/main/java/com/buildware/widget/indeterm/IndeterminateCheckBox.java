@@ -3,18 +3,19 @@ package com.buildware.widget.indeterm;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Parcelable;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatCheckBox;
 import android.util.AttributeSet;
 import android.view.ViewDebug;
+
+import androidx.annotation.Nullable;
+
+import com.google.android.material.checkbox.MaterialCheckBox;
 
 /**
  * A CheckBox with additional 3rd "indeterminate" state.
  * By default it is in "determinate" (checked or unchecked) state.
  * @author Svetlozar Kostadinov (sevarbg@gmail.com)
  */
-public class IndeterminateCheckBox extends AppCompatCheckBox
-        implements IndeterminateCheckable {
+public class IndeterminateCheckBox extends MaterialCheckBox implements IndeterminateCheckable {
 
     private static final int[] INDETERMINATE_STATE_SET = {
             R.attr.state_indeterminate
@@ -41,22 +42,16 @@ public class IndeterminateCheckBox extends AppCompatCheckBox
     }
 
     public IndeterminateCheckBox(Context context) {
-        super(context);
-        init(context, null);
+        this(context, null);
     }
 
     public IndeterminateCheckBox(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context, attrs);
+        this(context, attrs, R.attr.checkboxStyle);
     }
 
     public IndeterminateCheckBox(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context, attrs);
-    }
-
-    private void init(Context context, AttributeSet attrs){
-        setButtonDrawable(Utils.tintDrawable(this, R.drawable.btn_checkmark));
+        Utils.setButtonDrawable(this, R.drawable.btn_checkmark);
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.IndeterminateCheckable);
         try {
             // Read the XML attributes
