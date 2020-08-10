@@ -1,17 +1,16 @@
 # indeterminate-checkbox
-[![Tag](https://img.shields.io/github/tag/sevar83/indeterminate-checkbox.svg?label=JitPack)](https://jitpack.io/#sevar83/indeterminate-checkbox) [![License](https://img.shields.io/:license-apache_2.0-green.svg)](https://raw.githubusercontent.com/sevar83/indeterminate-checkbox/master/LICENSE) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-indeterminate--checkbox-green.svg?style=true)](https://android-arsenal.com/details/1/3224)
+[![Tag](https://jitpack.io/v/topjohnwu/indeterminate-checkbox.svg)](https://jitpack.io/#topjohnwu/indeterminate-checkbox) [![License](https://img.shields.io/:license-apache_2.0-green.svg)](https://raw.githubusercontent.com/topjohnwu/indeterminate-checkbox/master/LICENSE)
 
+![How they look like](./art/screenshot1.png)
 
-![How they look like](https://raw.githubusercontent.com/sevar83/indeterminate-checkbox/master/art/screenshot1.png)
-
-![Tags sample](https://raw.githubusercontent.com/sevar83/indeterminate-checkbox/master/art/3-state%20checkboxes.png)
+![Tags sample](./art/3-state%20checkboxes.png)
 
 Android CheckBox and RadioButton with additional 3rd 'indeterminate' state.
 
 ## Requirements
-  - Based on `AppCompat` library
-  - Requires `AppCompat` theme
-  - API 7+ (but tested only on API 10+)
+  - Based on `material` library
+  - Requires `material` theme
+  - API 14+
 
 ## Getting Started
 
@@ -28,11 +27,11 @@ Android CheckBox and RadioButton with additional 3rd 'indeterminate' state.
 2. You need this in your app's module `build.gradle` file:
     ```Gradle
     dependencies {
-        compile 'com.github.sevar83:indeterminate-checkbox:1.0.5@aar'
+        compile 'com.github.topjohnwu:indeterminate-checkbox:1.0.6'
     }
     ```
 
-3. The Support library's `AppCompat` theme or its variant must be set for your application or your activity in the manifest:
+3. The Support library's `MaterialComponents` theme or its variant must be set for your application or your activity in the manifest:
     ```Manifest
     <activity
         android:theme="@style/AppTheme"
