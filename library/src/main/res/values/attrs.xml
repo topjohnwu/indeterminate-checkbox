@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="IndeterminateCheckable">
+    <declare-styleable name="IndeterminateCheckBox">
         <!-- Additional drawable state. It is merged into the parent CompoundButton states -->
         <attr name="state_indeterminate" format="boolean" />
         <!-- Indeterminate state attribute for the view -->

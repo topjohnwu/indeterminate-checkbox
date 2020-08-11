@@ -1,21 +1,26 @@
 package com.topjohnwu.widget;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.util.StateSet;
 import android.view.ViewDebug;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
+import androidx.core.widget.CompoundButtonCompat;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
+import com.google.android.material.color.MaterialColors;
 
 /**
  * A CheckBox with additional 3rd "indeterminate" state.
  * By default it is in "determinate" (checked or unchecked) state.
  * @author Svetlozar Kostadinov (sevarbg@gmail.com)
  */
-public class IndeterminateCheckBox extends MaterialCheckBox implements IndeterminateCheckable {
+public class IndeterminateCheckBox extends MaterialCheckBox {
 
     private static final int[] INDETERMINATE_STATE_SET = {
             R.attr.state_indeterminate
@@ -51,12 +56,12 @@ public class IndeterminateCheckBox extends MaterialCheckBox implements Indetermi
 
     public IndeterminateCheckBox(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        Utils.setButtonDrawable(this, R.drawable.btn_checkmark);
-        final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.IndeterminateCheckable);
+        setButtonDrawable(R.drawable.btn_checkmark);
+        final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.IndeterminateCheckBox);
         try {
             // Read the XML attributes
             final boolean indeterminate = a.getBoolean(
-                    R.styleable.IndeterminateCheckable_indeterminate, false);
+                    R.styleable.IndeterminateCheckBox_indeterminate, false);
             if (indeterminate) {
                 setIndeterminate(true);
             }
@@ -105,14 +110,12 @@ public class IndeterminateCheckBox extends MaterialCheckBox implements Indetermi
         }
     }
 
-    @Override
     @Nullable
     @ViewDebug.ExportedProperty
     public Boolean getState() {
         return mIndeterminate ? null : isChecked();
     }
 
-    @Override
     public void setState(@Nullable Boolean state) {
         if (state != null) {
             setChecked(state);
@@ -184,5 +187,39 @@ public class IndeterminateCheckBox extends MaterialCheckBox implements Indetermi
         if (mIndeterminate || isChecked()) {
             notifyStateListener();
         }
+    }
+
+    @Override
+    public void setButtonDrawable(@DrawableRes int drawable) {
+        super.setButtonDrawable(drawable);
+        CompoundButtonCompat.setButtonTintList(this, createIndeterminateColorStateList());
+    }
+
+    private ColorStateList createIndeterminateColorStateList() {
+        final int[][] states = new int[][]{
+            new int[]{-android.R.attr.state_enabled},
+            new int[]{R.attr.state_indeterminate},
+            new int[]{android.R.attr.state_checked},
+            StateSet.WILD_CARD
+        };
+
+        int colorControlActivated = MaterialColors.getColor(this, R.attr.colorControlActivated);
+        int colorIndeterminate = MaterialColors.getColor(this, R.attr.colorControlIndeterminate, colorControlActivated);
+        int colorSurface = MaterialColors.getColor(this, R.attr.colorSurface);
+        int colorOnSurface = MaterialColors.getColor(this, R.attr.colorOnSurface);
+
+        int checked = MaterialColors.layer(colorSurface, colorControlActivated, MaterialColors.ALPHA_FULL);
+        int indeterminate = MaterialColors.layer(colorSurface, colorIndeterminate, MaterialColors.ALPHA_FULL);
+        int unchecked = MaterialColors.layer(colorSurface, colorOnSurface, MaterialColors.ALPHA_MEDIUM);
+        int disabled = MaterialColors.layer(colorSurface, colorOnSurface, MaterialColors.ALPHA_DISABLED);
+
+        final int[] colors = new int[]{
+            disabled,
+            indeterminate,
+            checked,
+            unchecked
+        };
+
+        return new ColorStateList(states, colors);
     }
 }

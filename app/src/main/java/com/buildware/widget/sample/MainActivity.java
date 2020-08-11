@@ -3,15 +3,11 @@ package com.buildware.widget.sample;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatCheckBox;
 
 import com.topjohnwu.widget.IndeterminateCheckBox;
-import com.topjohnwu.widget.IndeterminateRadioButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,45 +19,11 @@ public class MainActivity extends AppCompatActivity {
         final CheckBox checkBox = findViewById(R.id.checkBox);
         final AppCompatCheckBox appCompatCheckBox = findViewById(R.id.app_compat_checkbox);
         final IndeterminateCheckBox indetermCheckBox = findViewById(R.id.indeterm_checkbox);
-        final IndeterminateRadioButton radio = findViewById(R.id.indeterm_radio);
-
-        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String stateText = isChecked ? "Checked" : "Unchecked";
-                Toast.makeText(MainActivity.this, "Standard CheckBox: " + stateText, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        appCompatCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String stateText = isChecked ? "Checked" : "Unchecked";
-                Toast.makeText(MainActivity.this, "AppCompat CheckBox: " + stateText, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        indetermCheckBox.setOnStateChangedListener(new IndeterminateCheckBox.OnStateChangedListener() {
-            @Override
-            public void onStateChanged(IndeterminateCheckBox check, @Nullable Boolean state) {
-                String stateText = (state != null) ? (state ? "Checked" : "Unchecked") : "Indeterminate";
-                Toast.makeText(MainActivity.this, "IndeterminateCheckBox: " + stateText, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        radio.setOnStateChangedListener(new IndeterminateRadioButton.OnStateChangedListener() {
-            @Override
-            public void onStateChanged(IndeterminateRadioButton radioButton, @Nullable Boolean state) {
-                String stateText = (state != null) ? (state ? "Checked" : "Unchecked") : "Indeterminate";
-                Toast.makeText(MainActivity.this, "IndeterminateRadioButton: " + stateText, Toast.LENGTH_SHORT).show();
-            }
-        });
 
         findViewById(R.id.btn_indeterminate).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 indetermCheckBox.setState(null);
-                radio.setState(null);
             }
         });
 
@@ -71,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
                 checkBox.setChecked(true);
                 appCompatCheckBox.setChecked(true);
                 indetermCheckBox.setChecked(true);
-                radio.setChecked(true);
             }
         });
 
@@ -81,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 checkBox.setChecked(false);
                 appCompatCheckBox.setChecked(false);
                 indetermCheckBox.setChecked(false);
-                radio.setChecked(false);
             }
         });
 
@@ -91,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 checkBox.setEnabled(true);
                 appCompatCheckBox.setEnabled(true);
                 indetermCheckBox.setEnabled(true);
-                radio.setEnabled(true);
             }
         });
 
@@ -101,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 checkBox.setEnabled(false);
                 appCompatCheckBox.setEnabled(false);
                 indetermCheckBox.setEnabled(false);
-                radio.setEnabled(false);
             }
         });
     }

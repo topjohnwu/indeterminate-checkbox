@@ -10,9 +10,6 @@ import android.view.View;
 class IndeterminateSavedState extends View.BaseSavedState {
     boolean indeterminate;
 
-    /**
-     * Constructor called from {@link IndeterminateRadioButton#onSaveInstanceState()}
-     */
     IndeterminateSavedState(Parcelable superState) {
         super(superState);
     }

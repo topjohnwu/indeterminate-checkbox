@@ -5,6 +5,7 @@ android {
 
     defaultConfig {
         applicationId "com.buildware.widget.sample"
+        buildToolsVersion rootProject.ext.buildToolsVersion
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

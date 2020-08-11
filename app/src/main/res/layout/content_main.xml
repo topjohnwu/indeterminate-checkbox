@@ -82,13 +82,5 @@
             android:text="IndeterminateCheckBox"
             app:indeterminate="true"/>
 
-        <com.topjohnwu.widget.IndeterminateRadioButton
-            android:id="@+id/indeterm_radio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="IndeterminateRadioButton"
-            app:indeterminate="true"
-            android:gravity="center_vertical"/>
-
     </LinearLayout>
 </ScrollView>
