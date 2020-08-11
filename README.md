@@ -1,11 +1,9 @@
 # indeterminate-checkbox
 [![Tag](https://jitpack.io/v/topjohnwu/indeterminate-checkbox.svg)](https://jitpack.io/#topjohnwu/indeterminate-checkbox) [![License](https://img.shields.io/:license-apache_2.0-green.svg)](https://raw.githubusercontent.com/topjohnwu/indeterminate-checkbox/master/LICENSE)
 
-![How they look like](./art/screenshot1.png)
-
 ![Tags sample](./art/3-state%20checkboxes.png)
 
-Android CheckBox and RadioButton with additional 3rd 'indeterminate' state.
+Android CheckBox with additional 3rd 'indeterminate' state.
 
 ## Requirements
   - Based on `material` library
@@ -27,7 +25,7 @@ Android CheckBox and RadioButton with additional 3rd 'indeterminate' state.
 2. You need this in your app's module `build.gradle` file:
     ```Gradle
     dependencies {
-        compile 'com.github.topjohnwu:indeterminate-checkbox:1.0.6'
+        compile 'com.github.topjohnwu:indeterminate-checkbox:1.0.7'
     }
     ```
 
@@ -100,13 +98,6 @@ indetermCheck.isIndeterminate();
 // or 
 indetermCheck.getState();
 ```
-
-#### Known Issues 
-- `IndeterminateRadionButton` is not animated. In order to make it animated I had to include about 120 PNG files from the
-Android Lollipop framework. Unlike the `CheckBox` widget the `RadioButton` has no vector animations in Lollipop yet. They still use PNGs. When (and if) Google switches to vectors I'm going to import them here too.
-- Highlighting on pre-Lollipop seems not working or missing
-
-
 
 ## Todo
 
